@@ -76,7 +76,7 @@ $(function () {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     L.marker([22.2679,114.1291]).addTo(map)
-        .bindPopup('The University of Hong Kong, MedicalAI Lab')
+        .bindPopup('The University of Hong Kong, MedAI Lab')
         .openPopup();
 });
 
