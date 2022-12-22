@@ -42,7 +42,7 @@
     width: auto !important;
     top: 50% !important;
     transform: translate(0%, -50%);
-    font-family: "Merriweather", "微软雅黑";
+    font-family: "Times New Roman", "Times New Roman";
 }
 @media (max-width: 767px){
     .swiper-content .title{
@@ -56,7 +56,7 @@
 /*******************简介样式*******************/
 .threebox{
     width:100%;
-    font-family: "Merriweather", "微软雅黑";
+    font-family: "Times New Roman", "Times New Roman";
 }
 .threebox .row{
     margin-left: 0px;
