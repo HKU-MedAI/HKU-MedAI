@@ -71,11 +71,11 @@ $(function () {
     })
 
     /**************************Leaflet地图API功能**********************************/
-    var map = L.map('allmap').setView([22.2679,114.1291], 13);
+    var map = L.map('allmap').setView([22.2831,114.1366], 13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    L.marker([22.2679,114.1291]).addTo(map)
+    L.marker([22.2831,114.1366]).addTo(map)
         .bindPopup('The University of Hong Kong, MedAI Lab')
         .openPopup();
 });
