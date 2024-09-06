@@ -14,6 +14,17 @@
         <link rel="stylesheet" href="css/bulma.min.css">
         <link rel="stylesheet" href="js/leaflet/leaflet.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <style>
+            body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f0f0;}
+            .photo-wall {column-count: 4; column-gap: 15px; padding: 20px;}
+            .photo-wall img {width: 100%; margin-bottom: 15px; border-radius: 8px; transition: transform 0.3s ease; transform: rotate(calc(-3deg + (6 * random())));}
+            .photo-wall img:hover {transform: rotate(0) scale(1.05);}
+            @media (max-width: 1200px) {.photo-wall {column-count: 3;}}
+            @media (max-width: 800px) {.photo-wall {column-count: 2;}}
+            @media (max-width: 600px) {.photo-wall {column-count: 1;}}
+            .photo-wall img:nth-child(odd) {transform: rotate(-3deg);}
+            .photo-wall img:nth-child(even) {transform: rotate(3deg);}
+        </style>
 		<script>
 			var _hmt = _hmt || [];
 			(function() {
@@ -414,6 +425,15 @@
                             </div>
                         </article>
                     </div>
+                </div>
+                <p class="title is-4" style="margin-top: 30px; margin-bottom: 10px; font-size: 1.6rem;font-family: STCaiyun;">Lab Gathering</p>
+                <div class="photo-wall">
+                    <img src="./img/labgathering/01.jpg" alt="Photo 1">
+                    <img src="./img/labgathering/02.jpg" alt="Photo 2">
+                    <img src="./img/labgathering/03.jpg" alt="Photo 3">
+                    <img src="./img/labgathering/04.JPG" alt="Photo 4">
+                    <img src="./img/labgathering/05.JPG" alt="Photo 5">
+                    <img src="./img/labgathering/06.jpeg" alt="Photo 6">
                 </div>
             </div>
         </section>
