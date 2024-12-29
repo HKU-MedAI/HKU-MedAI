@@ -79,136 +79,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* Pulsating Play Button
-------------------------------*/
-.pulsating-play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
 
-.pulsating-play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-play-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.pulsating-play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.pulsating-play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
-
-.pulsating-play-btn:hover:after {
-  border-left: 15px solid var(--accent-color);
-  transform: scale(20);
-}
-
-@keyframes pulsate-play-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
-
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -470,6 +341,7 @@ h6 {
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
+;
   }
 
   .mobile-nav-active .navmenu>ul {
@@ -749,7 +621,9 @@ section,
   font-size: 2rem;
   font-weight: 700;
 }
-
+.about .content p {
+  font-size: 17px;
+}
 .about .content ul {
   list-style: none;
   padding: 0;
@@ -769,13 +643,9 @@ section,
   line-height: 0;
 }
 
-.about .content ul h5 {
-  font-size: 18px;
-  font-weight: 700;
-}
 
 .about .content ul p {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .about .content p:last-child {
@@ -1006,11 +876,15 @@ section,
   overflow: hidden;
 }
 
+
 .team .member img {
-  height: 330px;
+  width: 100%; 
+  height: auto;
   border-radius: 15px;
   overflow: hidden;
+  object-fit: cover;  
 }
+
 
 .team .member .member-content {
   padding: 0 20px 30px 20px;
@@ -1080,8 +954,10 @@ section,
     overflow: hidden;
     border-radius: 10px;
     img {
-      height:200px;
+      width: 100%; 
+      height: auto;
       transition: 0.3s;
+      border-radius: 10px;
     }
   }
 
@@ -1304,10 +1180,12 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .contact .info-item {
   background-color: var(--surface-color);
-  padding: 20px 0 30px 0;
+  padding: 20px 10px 30px 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  height: 200px; 
 }
 
 .contact .info-item i {
@@ -1337,60 +1215,7 @@ section,
   margin-bottom: 0;
   font-size: 14px;
 }
-
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
-  }
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+#allmap {
+  position: relative; 
+  z-index: 100; 
 }
